@@ -1,11 +1,41 @@
 
+<div class="navigation">
+    <mat-nav-list class="side-nav">
+        @for (item of menuItems(); track $index) {
+            <div class="side-nav__item">
+                <a class="side-nav__link " 
+                    
+                    [routerLink]="item.route"
+                    routerLinkActive="selected-menu-item"
+                    #rla="routerLinkActive"
+                    >
+                        <svg class="side-nav__icon">
+                            <use [attr.xlink:href]="'../../../../assets/img/sprite.svg#' + item.icon"></use>
+                        </svg>
+                        <span class="side-nav__label">{{item.label}}</span>
+                </a>
+            </div>
 
+            }  
+
+    </mat-nav-list>
+
+    <div class="legal">
+        &copy; 2026 by trillo. All rights reserved.
+    </div>
+</div>
+
+
+
+
+
+<!--
 <div class="navigation">
 
     <ul class="side-nav">
         @for (item of menuItems(); track $index) {
             <li class="side-nav__item" [class.side-nav__item--active]="item === selectedItem"> 
-                <a class=side-nav__link 
+                <a class="side-nav__link"
                     (click)="selectItem(item)"
                     [routerLink]="item.route" >
                         <svg class="side-nav__icon">
@@ -23,4 +53,5 @@
     </div>
 
 </div>
+-->
 

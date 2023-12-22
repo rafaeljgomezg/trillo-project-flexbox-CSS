@@ -4,6 +4,8 @@
     
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
+   min-height: 100vh;
 
 
 
@@ -17,9 +19,9 @@
         margin-top: 3.5rem;
 
         @media only screen and (max-width:$bp-medium){
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-evenly;
+            //flex-direction: row;
+            //align-items: center;
+            //justify-content: space-evenly;
             margin: 0;
         }
 
@@ -34,8 +36,8 @@
             @media only screen and (max-width:$bp-medium){
             }
 
-            &:not(:last-child) {
-                margin-bottom: .5rem;
+                &:not(:last-child) {
+                    margin-bottom: .5rem;
             }
            
         }
@@ -64,27 +66,33 @@
         &__item:active::before {
             background-color: var(--color-primary-light);
         }
+
+      
+        &__link{
+
+
+            &:link,
+            &:visited{
+                color: var(--color-grey-light-1);
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 1.5rem 3rem;
     
-        &__link:link,
-        &__link:visited {
-            color: var(--color-grey-light-1);
-            text-decoration: none;
-            text-transform: uppercase;
-            padding: 1.5rem 3rem;
-
-            position: relative;
-            z-index: 10; //z-index only works if we have set "position"
-
-            display: flex;
-            align-items: center;
-
-            @media only screen and (max-width:$bp-small){
-                flex-direction: column;
-                padding: 1.5rem .5rem;
-
+                position: relative;
+                z-index: 10; //z-index only works if we have set "position"
+    
+                display: flex;
+                align-items: center;
+    
+                @media only screen and (max-width:$bp-small){
+                    flex-direction: column;
+                    padding: 1.5rem .5rem;
+    
+                }
             }
-
         }
+           
+
     
         &__icon {
             width: 1.75rem;
@@ -101,13 +109,12 @@
     
         }
     
-        &__label {
-    
-        }
+
     }
 
-    .spacer {
-    }
+    /*.spacer {
+        flex: 1 1 auto;
+    }*/
 
     
     .legal {
@@ -124,6 +131,6 @@
 
 .selected-menu-item {
     border-left-color: rgb(35, 35, 245);
-    background: rgba(0,0,0,.05);
+    background-color: var(--color-primary);
 }
 

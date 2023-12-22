@@ -1,10 +1,12 @@
 @import '../../../assets/scss/base';
+
+
 .content {
     margin-top: 2px;
-    display: flex;
+    //display: flex;
 
     @media only screen and (max-width: $bp-medium) {
-        flex-direction: column;
+        //flex-direction: column;
     }
 
 
@@ -12,14 +14,12 @@
 
     &__sidebar {
         background-color: var(--color-grey-dark-1);
-        flex: 0 0 18%;
-
-
+        //flex: 0 0 18%;
     }
 
     &__main{
         background-color: #fff;
-        flex: 1;
+        //flex: 1;
     }
 
    
