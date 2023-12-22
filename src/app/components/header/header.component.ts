@@ -5,6 +5,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @Component({
@@ -15,8 +16,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatButtonModule,
     MatToolbarModule,
     RouterModule,
-    MatFormFieldModule
-
+    MatFormFieldModule,
+    MatBadgeModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
