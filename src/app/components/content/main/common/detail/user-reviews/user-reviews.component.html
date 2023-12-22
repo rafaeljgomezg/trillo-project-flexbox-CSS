@@ -1,0 +1,23 @@
+ @for (item of reviewItems(); track $index) {
+
+<figure class="review">
+   
+    <blockquote class="review__text">{{item.text}}</blockquote>
+
+    <figcaption class="review__user">
+        
+            <img class="review__user--photo" [attr.src]="item.route+item.photoName" alt="item.name">
+            <div class="review__user--box">
+                <p class="review__user--name">{{item.name}}</p>
+                <p class="review__user--date">{{item.date}}</p>
+            </div>
+            <div class="review__rating">{{item.rating}}</div>
+    </figcaption>
+
+</figure>
+}
+
+<button class="btn-inline">
+    Show all <span>&rarr;</span>
+</button>
+

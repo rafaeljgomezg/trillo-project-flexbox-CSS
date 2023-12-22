@@ -1,0 +1,129 @@
+@import '../../../../assets/scss/base';
+
+.navigation {
+    
+   display: flex;
+   flex-direction: column;
+
+
+
+
+
+    .side-nav {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        list-style: none;
+        margin-top: 3.5rem;
+
+        @media only screen and (max-width:$bp-medium){
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 0;
+        }
+
+        
+   
+
+      
+
+        &__item{
+            position: relative;
+            
+            @media only screen and (max-width:$bp-medium){
+            }
+
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+            }
+           
+        }
+
+        &__item::before {
+            content: "";  //This is used obliged or the element won't be shown on the browser
+            position: absolute;
+            top: 0;
+            height: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--color-primary);
+            transform: scaleY(0);
+            //transform-origin: bottom;  //it change the value from the transform will start, in this case from the bottom. Default is center
+            transition: transform .3s,
+                        width .4s cubic-bezier(.92,.01,.02,.99) .2s,
+                        background-color .1s;
+        }
+
+        &__item:hover::before,
+        &__item--active::before {
+            transform: scaleY(1);
+            width: 100%;
+        }
+
+        &__item:active::before {
+            background-color: var(--color-primary-light);
+        }
+    
+        &__link:link,
+        &__link:visited {
+            color: var(--color-grey-light-1);
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1.5rem 3rem;
+
+            position: relative;
+            z-index: 10; //z-index only works if we have set "position"
+
+            display: flex;
+            align-items: center;
+
+            @media only screen and (max-width:$bp-small){
+                flex-direction: column;
+                padding: 1.5rem .5rem;
+
+            }
+
+        }
+    
+        &__icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            margin-right: 2rem;
+            fill: currentColor; //it takes the color of the current or parent element
+
+            @media only screen and (max-width:$bp-small){
+                margin-right: 0;
+                margin-bottom: .7rem;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+    
+        }
+    
+        &__label {
+    
+        }
+    }
+
+    .spacer {
+    }
+
+    
+    .legal {
+        font-size: 1.2rem;
+        color: var(--color-grey-light-4);
+        text-align: center;
+        padding: 2.5rem;
+
+        @media only screen and (max-width:$bp-medium){
+            display: none;
+        }
+    }
+}
+
+.selected-menu-item {
+    border-left-color: rgb(35, 35, 245);
+    background: rgba(0,0,0,.05);
+}
+
