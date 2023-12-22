@@ -1,7 +1,7 @@
 <div class="gallery">
     @for (item of imgItems(); track $index) {
         <figure class="gallery__item">
-            <img [attr.src]="item.route+item.name" alt="item.alt" class="gallery__photo">
+            <img [attr.src]="item.route+item.name" alt="item.alt" class="gallery__photo" loading="eager">
         </figure>
     }
 

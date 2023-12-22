@@ -13,7 +13,7 @@ import { ImgItem } from '../../../../../models/images';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   templateUrl: './main-header.component.html',
   styleUrl: './main-header.component.scss'
